@@ -1,0 +1,23 @@
+Enter the height of the triangle: 5
+Enter the base of the triangle: 4
+Area of the triangle is: 10.0
+
+Enter the height of the triangle: 10.5
+Enter the base of the triangle: 22.5
+Area of the triangle is: 118.125
+
+
+CODE --
+import java.lang.*;
+import java.util.Scanner;
+
+class MyFirst{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the height of the triangle: ");
+		float h = sc.nextFloat();
+		System.out.print("Enter the base of the triangle: ");
+		float b = sc.nextFloat();
+		System.out.println("Area of the triangle is: "+(1/2.0)*b*h);
+	}
+}
