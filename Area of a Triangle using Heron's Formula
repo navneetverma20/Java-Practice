@@ -1,0 +1,29 @@
+Enter the sides of the triangle: 12
+10
+18
+Area of the triangle is: 56.568542494923804
+
+Enter the sides of the triangle: 12.5
+22.2
+10.8
+Area of the triangle is: 39.14872514736671
+
+
+CODE--
+import java.lang.*;
+import java.util.Scanner;
+
+class MyFirst{
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the sides of the triangle: ");
+		float a, b, c;
+		a = sc.nextFloat();
+		b = sc.nextFloat();
+		c = sc.nextFloat();
+		float s = (a+b+c)/2;
+		
+		double area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+		System.out.print("Area of the triangle is: "+area);
+	}
+}
