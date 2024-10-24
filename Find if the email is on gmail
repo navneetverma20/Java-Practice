@@ -1,0 +1,19 @@
+Enter the email ID: navneet@yahoo.com
+Is the ID on gmail? false
+
+Enter the email ID: navneet@gmail.com
+Is the ID on gmail? true
+
+
+CODE--
+package myfirst;
+import java.util.Scanner;
+
+public class MyFirst {
+    public static void main(String[] args) {
+        System.out.print("Enter the email ID: ");
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        System.out.println("Is the ID on gmail? " + str.matches(".*@gmail[.]com"));
+    }    
+}
