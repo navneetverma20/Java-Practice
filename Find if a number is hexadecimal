@@ -1,0 +1,19 @@
+Enter the number: 456a
+Is the number hexa-decimal: false
+
+Enter the number: 43A56F
+Is the number hexa-decimal: true
+
+
+CODE--
+package myfirst;
+import java.util.Scanner;
+
+public class MyFirst {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        String n = sc.nextLine();
+        System.out.println("Is the number hexa-decimal: "+n.matches("[0-9A-F]+"));
+    }    
+}
