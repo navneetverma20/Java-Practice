@@ -1,0 +1,19 @@
+Enter the number: 87612
+Is the number binary: false
+
+Enter the number: 1001011
+Is the number binary: true
+
+
+CODE--
+package myfirst;
+import java.util.Scanner;
+
+public class MyFirst {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number: ");
+        String n = sc.next();
+        System.out.println("Is the number binary: "+n.matches("[01]+"));
+    }    
+}
