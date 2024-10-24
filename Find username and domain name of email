@@ -1,0 +1,20 @@
+Enter the email ID: navneetkumarverma50@gmail.com
+The username is: navneetkumarverma50
+The domain name is: gmail.com
+
+
+CODE--
+package myfirst;
+import java.util.Scanner;
+
+public class MyFirst {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the email ID: ");
+        String email = sc.next();
+        String username = email.substring(0, email.indexOf("@"));
+        String domain = email.substring(email.indexOf("@")+1);
+        System.out.println("The username is: "+username);
+        System.out.println("The domain name is: "+domain);
+    }    
+}
