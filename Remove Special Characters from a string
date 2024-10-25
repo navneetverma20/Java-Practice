@@ -1,0 +1,20 @@
+Enter the string: #$%Hello"   "Navneet!:.,/\;
+The corrected string is: HelloNavneet
+
+Enter the string: navneet50@gmail.com
+The corrected string is: navneet50gmailcom
+
+
+CODE--
+package myfirst;
+import java.util.Scanner;
+
+public class MyFirst {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the string: ");
+        String str = sc.nextLine();
+        str = str.replaceAll("\\W", "");
+        System.out.println("The corrected string is: "+str);
+    }    
+}
