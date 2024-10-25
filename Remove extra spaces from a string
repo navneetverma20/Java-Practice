@@ -1,0 +1,21 @@
+Enter the string:     This    is a        Java      Program of    "Hello      World!".
+The corrected string is: This is a Java Program of "Hello World!".
+
+Enter the string:        Hi Navneet,   how are you!?
+The corrected string is: Hi Navneet, how are you!?
+
+
+CODE--
+package myfirst;
+import java.util.Scanner;
+
+public class MyFirst {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the string: ");
+        String str = sc.nextLine();
+        str = str.replaceAll("\\s+", " ");
+        str = str.trim();
+        System.out.println("The corrected string is: "+str);
+    }    
+}
