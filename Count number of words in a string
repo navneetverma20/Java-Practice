@@ -1,0 +1,25 @@
+Enter the string:     Java     Programming is  so much    fun!   
+Formatted string is: Java Programming is so much fun!
+Total no. of words in the string is: 6
+
+Enter the string: Hi there!       How are you doing mate!   
+Formatted string is: Hi there! How are you doing mate!
+Total no. of words in the string is: 7
+
+
+CODE--
+package myfirst;
+import java.util.Scanner;
+
+public class MyFirst {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the string: ");
+        String str = sc.nextLine();
+        str = str.trim();
+        str = str.replaceAll("\\s+", " ");
+        System.out.println("Formatted string is: "+str);
+        str = str.replaceAll("\\S", "");
+        System.out.println("Total no. of words in the string is: "+(str.length()+1));
+    }    
+}
