@@ -1,0 +1,38 @@
+Enter the year: 2024
+It's a leap year.
+
+Enter the year: 2023
+Not a leap year.
+
+Enter the year: 1900
+Not a leap year.
+
+
+CODE--
+package myfirst;
+import java.util.Scanner;
+
+public class MyFirst {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the year: ");
+        int x = sc.nextInt();
+        
+        if(x%4 == 0){
+            if(x%100 == 0){
+                if(x%400 == 0){
+                    System.out.println("It's a leap year.");
+                }
+                else{
+                    System.out.println("Not a leap year.");
+                }
+            }
+            else{
+                System.out.println("It's a leap year.");
+            }
+        }
+        else{
+            System.out.println("Not a leap year.");
+        }
+    }    
+}
