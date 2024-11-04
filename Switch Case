@@ -1,0 +1,35 @@
+Enter the website url: www.google.com
+Commercial
+
+Enter the website url: https://www.amazon.in
+India
+
+
+CODE--
+package myfirst;
+import java.util.Scanner;
+
+public class MyFirst {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the website url: ");
+        String url = sc.nextLine();
+        
+        String temp = url.substring(url.lastIndexOf('.')+1);
+        
+        switch(temp){
+            case "com": System.out.println("Commercial");
+                        break;
+            case "net": System.out.println("Network");
+                        break;
+            case "org": System.out.println("Organization");
+                        break;
+            case "gov": System.out.println("Government");
+                        break;
+            case "in": System.out.println("India");
+                        break;
+            default: System.out.println("Invalid");
+                        break;
+        }
+    }    
+}
