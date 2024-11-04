@@ -1,0 +1,97 @@
+--------CALCULATOR--------
+Operations available are: 
++
+-
+/
+X
+
+Enter the two numbers
+a = 12
+b = 15
+Choose the operation you want to perform on them: /
+a/b = 0.8
+
+
+
+--------CALCULATOR--------
+Operations available are: 
++
+-
+/
+X
+
+Enter the two numbers
+a = 12
+b = 15
+Choose the operation you want to perform on them: -
+a-b = -3
+
+
+
+--------CALCULATOR--------
+Operations available are: 
++
+-
+/
+X
+
+Enter the two numbers
+a = 12
+b = 15
+Choose the operation you want to perform on them: X
+aXb = 180
+
+
+--------CALCULATOR--------
+Operations available are: 
++
+-
+/
+X
+
+Enter the two numbers
+a = 12
+b = 15
+Choose the operation you want to perform on them: +
+a+b = 27
+
+
+
+
+CODE--
+package myfirst;
+import java.util.Scanner;
+
+public class MyFirst {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("--------CALCULATOR--------");
+        System.out.println("Operations available are: ");
+        System.out.println("+");
+        System.out.println("-");
+        System.out.println("/");
+        System.out.println("X");
+        System.out.println();
+        System.out.println("Enter the two numbers");
+        System.out.print("a = ");
+        int a = sc.nextInt();
+        System.out.print("b = ");
+        int b = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Choose the operation you want to perform on them: ");
+        String op = sc.nextLine();
+        
+        switch(op){
+            case "+": System.out.println("a+b = "+(a+b));
+                      break;
+            case "-": System.out.println("a-b = "+(a-b));
+                      break;
+            case "X": System.out.println("aXb = "+(a*b));
+                      break;
+            case "/": System.out.println("a/b = "+((float)a/b));
+                      break;
+            default: System.out.println("Inavalid Operation");
+                     break;
+        }
+    }    
+}
