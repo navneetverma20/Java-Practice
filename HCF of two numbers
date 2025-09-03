@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main
+{
+    static int hcf(int x, int y){
+        while(x!=y){
+            if(x>y){
+                x = x-y;
+            }
+            else if(y>x){
+                y = y-x;
+            }
+        }
+        return x;
+    }
+	public static void main(String[] args) {
+        System.out.print("Enter the first number: ");
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        
+        System.out.print("Enter the second number: ");
+        int b = sc.nextInt();
+        
+        System.out.println("The HCF is: "+hcf(a,b));
+	}
+}
