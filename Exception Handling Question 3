@@ -1,0 +1,48 @@
+Write a program that accepts a number from the user.
+If the number is negative, throw a custom exception NegativeNumberException.
+Otherwise, print the square of the number.
+
+
+
+OUTPUT:-
+Enter any number: 5
+Square is: 25
+
+Enter any number: -5
+ERROR: Number can not be negative
+
+
+
+CODE:-
+import java.util.*;
+
+class NegativeNumberException extends Exception{
+    public NegativeNumberException(String message){
+        super(message);
+    }
+}
+
+public class App{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter any number: ");
+        int n = sc.nextInt();
+
+        try{
+            square(n);
+        }
+        catch(NegativeNumberException e){
+            System.out.println("ERROR: " + e.getMessage());
+        }
+        
+    }
+
+    static void square(int n) throws NegativeNumberException{
+        if(n < 0){
+            throw new NegativeNumberException("Number can not be negative");
+        }
+        else{
+            System.out.println("Square is: " + n*n);
+        }
+    }
+}
