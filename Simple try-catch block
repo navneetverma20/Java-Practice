@@ -1,0 +1,36 @@
+Write a program that takes two integer inputs from the user and performs division.
+Implement try-catch to handle the ArithmeticException (or equivalent) that occurs when the denominator is zero.
+
+
+
+OUTPUT:-
+Enter the dividend: 10
+Enter the divisor: 0
+Can not divide by 0!
+
+Enter the dividend: 10
+Enter the divisor: 5
+After division: 2
+
+
+
+import java.util.*;
+
+public class App{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the dividend: ");
+        int a = sc.nextInt();
+        System.out.print("Enter the divisor: ");
+        int b = sc.nextInt();
+        int res;
+
+        try{
+            res = a/b;
+            System.out.println("After division: "+res);
+        }
+        catch(ArithmeticException e){
+            System.out.println("Can not divide by 0!");
+        }
+    }
+}
