@@ -1,0 +1,49 @@
+Create a program where the user enters their age.
+If the age is less than 18, throw a custom exception InvalidAgeException with an appropriate message.
+Handle the exception in the main method.
+
+
+
+OUTPUT:-
+Enter your age: 15
+Access denied as age is less than 18
+
+Enter your age: 20
+Access granted
+
+
+
+
+CODE:-
+
+import java.util.*;
+
+class InvalidAgeException extends Exception{
+    public InvalidAgeException(String message){
+        super(message);
+    }
+}
+
+public class App{
+    public static void main(String[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your age: ");
+        int age = sc.nextInt();
+
+        try{
+            checkAge(age);
+        }
+        catch(InvalidAgeException e){
+            System.out.println("Access denied as " + e.getMessage());
+        }
+    }
+
+    static void checkAge(int age) throws InvalidAgeException{
+        if(age < 18){
+            throw new InvalidAgeException("age is less than 18");
+        }
+        else{
+            System.out.println("Access granted");
+        }
+    }
+}
