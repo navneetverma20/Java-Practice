@@ -1,0 +1,78 @@
+Create a BankAccount class with deposit() and withdraw() methods.
+Throw InsufficientFundsException if the withdrawal amount exceeds the balance.
+Throw InvalidAmountException if the deposit or withdrawal amount is negative.
+
+
+
+OUTPUT:-
+Withdrawal successful
+Remaining balance: 500
+Congratulaions, deposit successful!
+Remaining balance: 1500
+ERROR: Amount can not be negative
+
+
+
+CODE:-
+import java.util.*;
+
+class InsufficientFundsException extends Exception{
+    public InsufficientFundsException(String message){
+        super(message);
+    }
+}
+
+class InvalidAmountException extends Exception{
+    public InvalidAmountException(String message){
+        super(message);
+    }
+}
+
+class BankAccount{
+    int balance;
+    public BankAccount(int balance){
+        this.balance = balance;
+    }
+    public void withdraw(int amount) throws InsufficientFundsException, InvalidAmountException{
+        if(amount < 0){
+            throw new InvalidAmountException("Amount can not be negative");
+        }
+        if(amount > balance){
+            throw new InsufficientFundsException("Your balance is not sufficient.");
+        }
+        else{
+            balance = balance - amount;
+            System.out.println("Withdrawal successful");
+            System.out.println("Remaining balance: "+ balance);
+        }
+    }
+    public void deposit(int amount) throws InvalidAmountException{
+        if(amount < 0){
+            throw new InvalidAmountException("Amount can not be negative");
+        }
+        else{
+            balance = balance + amount;
+            System.out.println("Congratulaions, deposit successful!");
+            System.out.println("Remaining balance: "+balance);
+        }
+    }
+}
+
+public class App{
+    public static void main(String[] args){
+        BankAccount b = new BankAccount(1000);
+        try{
+            b.withdraw(500);
+            //b.withdraw(700);
+            b.deposit(1000);
+            //b.deposit(-1000);
+            b.withdraw(-500);
+        }
+        catch(InvalidAmountException e){
+            System.out.println("ERROR: "+ e.getMessage());
+        }
+        catch(InsufficientFundsException e){
+            System.out.println("ERROR: "+ e.getMessage());
+        }
+    }
+}
