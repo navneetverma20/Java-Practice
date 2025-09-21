@@ -1,0 +1,50 @@
+Create a custom exception class, for example, InsufficientFundsException.
+Write a program simulating a bank account withdrawal where you throw this custom exception if the withdrawal amount exceeds the balance.
+Handle this exception in the calling code.
+
+
+
+OUTPUT:-
+Transaction successful
+Amount of Rs.700.0 is more than your A/c balance!
+A/c Balance: 500.0
+
+
+
+class InsufficientFundsException extends Exception{
+    public InsufficientFundsException(String message){
+        super(message);
+    }
+}
+
+class BankAccount{
+    public double balance;
+    public BankAccount(double balance){
+        this.balance = balance;
+    }
+    public void withdraw(double amount) throws InsufficientFundsException{
+        if(amount > balance){
+            throw new InsufficientFundsException("Amount of Rs."+amount+" is more than your A/c balance!");
+        }
+        else{
+            balance = balance - amount;
+            System.out.println("Transaction successful");
+        }
+    }
+}
+
+public class App{
+    public static void main(String[] args){
+        BankAccount b = new BankAccount(1000);
+        try{
+            b.withdraw(500);
+            b.withdraw(700);
+        }
+        catch(InsufficientFundsException e){
+            System.out.println(e.getMessage());
+        }
+        finally{
+            System.out.println("A/c Balance: "+ b.balance);
+        }
+    }
+}    
