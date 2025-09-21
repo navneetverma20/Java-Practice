@@ -1,0 +1,59 @@
+Write a program that takes student marks as input.
+If marks are greater than 100 or less than 0, throw a MarksOutOfRangeException.
+Otherwise, print the grade.
+
+
+
+OUTPUT:-
+Enter the marks: 200
+ERROR: Marks should be between 0-100
+
+Enter the marks: 100
+I division pass
+
+Enter the marks: 50
+II division pass
+
+Enter the marks: 30
+FAIL
+
+
+
+CODE:-
+import java.util.*;
+
+class MarksOutOfRangeException extends Exception{
+    public MarksOutOfRangeException(String message){
+        super(message);
+    }
+}
+
+public class App{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the marks: ");
+        int n = sc.nextInt();
+        
+        try{
+            getGrades(n);
+        }
+        catch(MarksOutOfRangeException e){
+            System.out.println("ERROR: "+e.getMessage());
+        }
+    }
+
+    static void getGrades(int n) throws MarksOutOfRangeException{
+        if(n > 100 || n < 0){
+            throw new MarksOutOfRangeException("Marks should be between 0-100");
+        }
+        else if(n <= 100 && n >= 60){
+            System.out.println("I division pass");
+        }
+        else if(n < 60 && n >= 40){
+            System.out.println("II division pass");
+        }
+        else{
+            System.out.println("FAIL");
+        }
+    }
+}
